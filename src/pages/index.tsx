@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Sparkles, Lock, Unlock } from 'lucide-react';
 import { JSX } from 'react';
-import { SplashScreen } from '../components/ui/SplashScreen.js';
+// import SplashScreen from '../components/SplashScreen';
 interface Particle {
     id: number;
     x: number;
@@ -27,7 +27,7 @@ const backgroundParticlesData = Array.from({ length: 50 }, (_, i) => ({
 function App(): JSX.Element {
     const [isRevealed, setIsRevealed] = useState<boolean>(false);
     const [particles, setParticles] = useState<Particle[]>([]);
-    const [loading, setLoading] = useState(true);
+   // const [loading, setLoading] = useState(true);
 
 
     const backgroundParticles = useMemo(() => backgroundParticlesData, []);
@@ -38,9 +38,9 @@ function App(): JSX.Element {
         content: 'Desde o momento que te conheci, minha vida ganhou um novo significado. Você é a razão do meu sorriso, a luz dos meus dias, e a pessoa que me faz querer ser melhor a cada dia. Te amo mais do que as palavras podem expressar.'
     };
 
-    if (loading) {
-        return <SplashScreen onFinish={() => setLoading(false)} />;
-    }
+    //  if (loading) {
+      //  return <SplashScreen onFinish={() => setLoading(false)} />;
+    //  }
     const handleReveal = (): void => {
         if (!isRevealed) {
             setIsRevealed(true);
